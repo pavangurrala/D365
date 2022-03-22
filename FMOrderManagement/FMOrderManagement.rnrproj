@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <BuildTasksDirectory Condition=" '$(BuildTasksDirectory)' == ''">$(MSBuildProgramFiles32)\MSBuild\Microsoft\Dynamics\AX</BuildTasksDirectory>
+    <Model>FleetManagement</Model>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <OutputPath>bin</OutputPath>
+    <SchemaVersion>2.0</SchemaVersion>
+    <GenerateCrossReferences>True</GenerateCrossReferences>
+    <RunAppCheckerRules>False</RunAppCheckerRules>
+    <LogAppcheckerDiagsAsErrors>False</LogAppcheckerDiagsAsErrors>
+    <ProjectGuid>{3a910bad-23ba-495d-9b35-46b2a1614864}</ProjectGuid>
+    <Name>FMOrderManagement</Name>
+    <RootNamespace>FMOrderManagement</RootNamespace>
+    <StartupObject>FMOrderMgmtForm</StartupObject>
+    <StartupType>Form</StartupType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Configuration>Debug</Configuration>
+    <DBSyncInBuild>True</DBSyncInBuild>
+    <GenerateFormAdaptors>False</GenerateFormAdaptors>
+    <Company>
+    </Company>
+    <Partition>initial</Partition>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DataEntityExpandParentChildRelations>False</DataEntityExpandParentChildRelations>
+    <DataEntityUseLabelTextAsFieldName>False</DataEntityUseLabelTextAsFieldName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Display Menu Items\" />
+    <Folder Include="EDT Strings\" />
+    <Folder Include="Forms\" />
+    <Folder Include="Menus\" />
+    <Folder Include="Tables\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AxEdt\AccountId">
+      <SubType>Content</SubType>
+      <Name>AccountId</Name>
+      <Link>EDT Strings\AccountId</Link>
+    </Content>
+    <Content Include="AxEdt\OrderMgmtID">
+      <SubType>Content</SubType>
+      <Name>OrderMgmtID</Name>
+      <Link>EDT Strings\OrderMgmtID</Link>
+    </Content>
+    <Content Include="AxForm\FMOrderMgmtForm">
+      <SubType>Content</SubType>
+      <Name>FMOrderMgmtForm</Name>
+      <Link>Forms\FMOrderMgmtForm</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMOrderMgmtForm">
+      <SubType>Content</SubType>
+      <Name>FMOrderMgmtForm</Name>
+      <Link>Display Menu Items\FMOrderMgmtForm</Link>
+    </Content>
+    <Content Include="AxMenu\FleetManagement">
+      <SubType>Content</SubType>
+      <Name>FleetManagement</Name>
+      <Link>Menus\FleetManagement</Link>
+    </Content>
+    <Content Include="AxTable\FMOrderMgmtTable">
+      <SubType>Content</SubType>
+      <Name>FMOrderMgmtTable</Name>
+      <Link>Tables\FMOrderMgmtTable</Link>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <Import Project="$(BuildTasksDirectory)\Microsoft.Dynamics.Framework.Tools.BuildTasks.targets" />
+</Project>
